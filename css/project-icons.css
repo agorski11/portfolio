@@ -1,0 +1,312 @@
+/* Project Icons and Technology Tags Styling */
+
+/* Project image container with icon overlay */
+.project-img {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
+}
+
+/* Project technology icon overlay */
+.project-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    z-index: 2;
+}
+
+.project-card:hover .project-icon {
+    transform: scale(1.1);
+}
+
+/* Specific colors for different technology icons */
+.project-icon .fa-credit-card {
+    color: #38bdf8; /* Subscription */
+}
+
+.project-icon .fa-database {
+    color: #f97316; /* Data */
+}
+
+.project-icon .fa-code-branch {
+    color: #8b5cf6; /* DevOps */
+}
+
+.project-icon .fa-brain {
+    color: #ec4899; /* AI */
+}
+
+.project-icon .fa-mobile-alt {
+    color: #10b981; /* Mobile */
+}
+
+.project-icon .fa-lock {
+    color: #f43f5e; /* Security */
+}
+
+/* Technology tags with icons */
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.project-tech span {
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--primary-dark);
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: var(--transition);
+}
+
+.project-tech span:hover {
+    background: rgba(99, 102, 241, 0.2);
+    transform: translateY(-2px);
+}
+
+.project-tech i {
+    font-size: 0.9rem;
+}
+
+/* Specific colors for different technology icons */
+.fa-react, .fa-react-native {
+    color: #61dafb;
+}
+
+.fa-node-js {
+    color: #68a063;
+}
+
+.fa-aws {
+    color: #ff9900;
+}
+
+.fa-python {
+    color: #3776ab;
+}
+
+.fa-angular {
+    color: #dd0031;
+}
+
+.fa-vue-js {
+    color: #42b883;
+}
+
+.fa-java {
+    color: #007396;
+}
+
+.fa-docker {
+    color: #2496ed;
+}
+
+.fa-azure {
+    color: #0078d4;
+}
+
+.fa-database {
+    color: #f29111;
+}
+
+/* Project Cards with Icon-Based Headers */
+
+/* Project card with icon header instead of image */
+.project-card {
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--bg-color);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Project header with icon and gradient */
+.project-header {
+    height: 180px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    overflow: hidden;
+}
+
+/* Large main icon */
+.project-icon-large {
+    font-size: 5rem;
+    opacity: 0.8;
+    transition: transform 0.5s ease, opacity 0.3s ease;
+}
+
+.project-card:hover .project-icon-large {
+    transform: scale(1.1) rotate(5deg);
+    opacity: 1;
+}
+
+/* Small badge icon */
+.project-icon-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+    z-index: 2;
+}
+
+.project-card:hover .project-icon-badge {
+    transform: scale(1.1) rotate(10deg);
+}
+
+/* Project content */
+.project-content {
+    padding: 25px;
+}
+
+.project-content h3 {
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    color: var(--dark-color);
+}
+
+.project-content h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 20px;
+    background: var(--gradient-primary);
+    border-radius: 5px;
+}
+
+.project-content p {
+    color: var(--mid-color);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Technology tags */
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.project-tech span {
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--primary-dark);
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: var(--transition);
+}
+
+.project-tech span:hover {
+    background: rgba(99, 102, 241, 0.2);
+    transform: translateY(-2px);
+}
+
+.project-tech i {
+    font-size: 0.9rem;
+}
+
+/* Tech icon colors */
+.fa-react, .fa-react-native {
+    color: #61dafb;
+}
+
+.fa-node-js {
+    color: #68a063;
+}
+
+.fa-aws {
+    color: #ff9900;
+}
+
+.fa-python {
+    color: #3776ab;
+}
+
+.fa-microsoft {
+    color: #0078d4;
+}
+
+.fa-java {
+    color: #007396;
+}
+
+.fa-docker {
+    color: #2496ed;
+}
+
+/* Project link styling */
+.project-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 20px;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.project-link:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .project-header {
+        height: 150px;
+    }
+    
+    .project-icon-large {
+        font-size: 4rem;
+    }
+    
+    .project-content {
+        padding: 20px;
+    }
+} 

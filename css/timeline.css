@@ -1,0 +1,227 @@
+/* Professional Timeline Styling */
+.experience-section {
+    padding: 80px 0;
+    background-color: var(--bg-color);
+    position: relative;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+/* Center line */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background: var(--primary-color);
+    background: linear-gradient(to bottom, var(--primary-color), var(--primary-dark));
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+    border-radius: 2px;
+}
+
+/* Timeline items */
+.timeline-item {
+    padding: 15px 30px;
+    position: relative;
+    width: 50%;
+    background: transparent;
+    margin-bottom: 50px;
+}
+
+/* Timeline items on left */
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+/* Timeline items on right */
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+/* Timeline dot */
+.timeline-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background: white;
+    border: 4px solid var(--primary-color);
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Position dots for right items */
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -10px;
+}
+
+/* Timeline date */
+.timeline-date {
+    position: absolute;
+    top: 15px;
+    right: -155px;
+    background: var(--primary-color);
+    color: white;
+    padding: 7px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Position dates for right items */
+.timeline-item:nth-child(even) .timeline-date {
+    right: auto;
+    left: -155px;
+}
+
+/* Timeline content */
+.timeline-content {
+    padding: 25px;
+    background: var(--bg-color-alt);
+    border-radius: 8px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.timeline-content::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: -15px;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid var(--bg-color-alt);
+}
+
+/* Position arrow for right items */
+.timeline-item:nth-child(even) .timeline-content::after {
+    right: auto;
+    left: -15px;
+    border-left: none;
+    border-right: 15px solid var(--bg-color-alt);
+}
+
+.timeline-content h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.timeline-content p {
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+/* Timeline hover effects */
+.timeline-item:hover .timeline-content {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-item:hover .timeline-dot {
+    background: var(--primary-color);
+    transform: scale(1.2);
+}
+
+/* Experience summary */
+.experience-summary {
+    margin-top: 70px;
+    text-align: center;
+}
+
+.summary-stats {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin-top: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .timeline::after {
+        left: 31px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+    
+    .timeline-dot {
+        left: 21px;
+        right: auto;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: 21px;
+    }
+    
+    .timeline-date {
+        right: auto;
+        left: 70px;
+        top: -35px;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-date {
+        right: auto;
+        left: 70px;
+    }
+    
+    .timeline-content::after {
+        left: -15px;
+        right: auto;
+        border-left: none;
+        border-right: 15px solid var(--bg-color-alt);
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content::after {
+        left: -15px;
+    }
+}
+
+@media (max-width: 767px) {
+    .timeline-date {
+        font-size: 0.85rem;
+        padding: 5px 10px;
+    }
+    
+    .stat-value {
+        font-size: 2rem;
+    }
+} 

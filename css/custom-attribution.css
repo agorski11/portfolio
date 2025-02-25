@@ -1,0 +1,91 @@
+/* Styling for company attribution section */
+.company-attribution {
+    background-color: var(--bg-color-alt);
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.company-attribution::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+}
+
+.attribution-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.attribution-content h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--dark-color);
+    position: relative;
+    display: inline-block;
+}
+
+.attribution-content h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+.attribution-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+
+.attribution-content strong {
+    color: var(--primary-dark);
+    font-weight: 700;
+}
+
+.company-stats {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+    .company-stats {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    
+    .stat-value {
+        font-size: 2rem;
+    }
+} 

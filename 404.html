@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Peter's Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            margin: 0;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1;
+        }
+        
+        .error-title {
+            font-size: 2rem;
+            margin: 1rem 0 2rem;
+        }
+        
+        .error-message {
+            max-width: 600px;
+            margin-bottom: 2rem;
+            color: var(--mid-color);
+        }
+        
+        .error-search {
+            max-width: 500px;
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+        
+        .search-container {
+            position: relative;
+            width: 100%;
+        }
+        
+        .search-container input {
+            width: 100%;
+            padding: 1rem 3rem 1rem 1.5rem;
+            border-radius: var(--border-radius-md);
+            border: 2px solid var(--primary-light);
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+        }
+        
+        .search-container button {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+        
+        .error-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .error-illustration {
+            max-width: 300px;
+            width: 100%;
+            margin-bottom: 2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 6rem;
+            }
+            .error-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Portfolio</div>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#skills">Skills</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 404 Content -->
+    <section class="error-page">
+        <img src="images/404-illustration.svg" alt="Page not found illustration" class="error-illustration">
+        <h1 class="error-code">404</h1>
+        <h2 class="error-title">Page Not Found</h2>
+        <p class="error-message">Oops! The page you're looking for seems to have wandered off. It might be taking a coffee break or exploring uncharted territories.</p>
+        
+        <div class="error-search">
+            <div class="search-container">
+                <input type="text" id="site-search" placeholder="Try searching for something...">
+                <button type="button" id="search-button"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        
+        <div class="error-links">
+            <a href="index.html" class="btn primary-btn"><i class="fas fa-home"></i> Back to Home</a>
+            <a href="index.html#contact" class="btn secondary-btn"><i class="fas fa-envelope"></i> Contact Me</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Peter. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="index.html#home">Home</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#skills">Skills</a>
+                    <a href="index.html#projects">Projects</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Simple search functionality
+        document.getElementById('search-button').addEventListener('click', performSearch);
+        document.getElementById('site-search').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+        
+        function performSearch() {
+            const searchQuery = document.getElementById('site-search').value.trim();
+            if (searchQuery) {
+                window.location.href = `index.html?search=${encodeURIComponent(searchQuery)}`;
+            }
+        }
+        
+        // 404 page animation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add animated particles to 404 page
+            const errorPage = document.querySelector('.error-page');
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.width = `${Math.random() * 10 + 5}px`;
+                particle.style.height = particle.style.width;
+                particle.style.background = `hsl(${Math.random() * 60 + 230}, 70%, 60%)`;
+                particle.style.position = 'absolute';
+                particle.style.borderRadius = '50%';
+                particle.style.opacity = '0.7';
+                particle.style.animation = `float ${Math.random() * 5 + 3}s ease-in-out infinite`;
+                particle.style.animationDelay = `${Math.random() * 2}s`;
+                errorPage.appendChild(particle);
+            }
+        });
+    </script>
+</body>
+</html> 

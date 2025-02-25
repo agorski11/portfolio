@@ -1,0 +1,20 @@
+/* Remove all GitHub-related CSS styles */
+.github-section,
+.github-stats,
+.contribution-graph,
+.repository-item,
+.github-calendar,
+.social-link.github {
+    /* Remove these style blocks entirely */
+}
+
+/* Remove any GitHub icon styles */
+.fa-github,
+.github-icon {
+    /* Remove these styles */
+}
+
+/* Remove any GitHub-specific animations */
+@keyframes github-pulse {
+    /* Remove any GitHub-specific animations */
+} 
